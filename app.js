@@ -5,7 +5,8 @@ window.addEventListener('load',()=>{
    let temperatureDegree=document.querySelector('.temperature-degree');
    let temperaturesection=document.querySelector('.degree-section');
    let temperaturespan=document.querySelector('.degree-section span');
-   let locationtimezone=document.querySelector('.location-timezone')
+   let locationtimezone=document.querySelector('.location-timezone');
+   let image=document.querySelector('.location img');
    if(navigator.geolocation){
        navigator.geolocation.getCurrentPosition((position)=>{
            long=position.coords.longitude;
@@ -24,6 +25,7 @@ window.addEventListener('load',()=>{
                    temperatureDescription.textContent=response.current.condition.text;
                    locationtimezone.textContent=response.location.tz_id;
                    const icon=response.current.condition.text;
+                   image.src=response.current.condition.icon;
                    //SET ICON
                    setIcons(icon,document.querySelector('.icon'));
                    //change temperature to celsius /fahrenheit

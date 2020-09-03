@@ -39,3 +39,6 @@ body{
     display: flex;
     height:150px;
 } 
+.temperature-description{
+    font-size:20px;
+}
